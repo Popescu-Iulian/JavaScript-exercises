@@ -4,33 +4,48 @@
   margin: 0;
 }
 
-body {
-  background-color: lightgoldenrodyellow;
+/* body {
+  width: 60vw;
+  margin: 0 auto;
+} */
+
+header {
+  background-color: pink;
+  height: 10vh;
+}
+
+div {
+  display: flex;
+}
+
+aside {
+  background-color: lightgreen;
+  width: 20vw;
+  height: 90vh;
 }
 
 main {
-  width: 60%;
-  height: 100vh;
-  background-color: gray;
-  margin: 0 auto;
-  line-height: 1.2rem;
-  padding: 3rem;
+  background-color: yellow;
+  height: 90vh;
+  width: 80vw;
 }
 
-main h1 {
-  color: blue;
+footer {
+  background-color: lightskyblue;
+  height: 10vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+p {
+  margin: 5px;
+  border: 1px solid blue;
+  border-radius: 4px;
   font-size: 2rem;
-  letter-spacing: 0.5rem;
+  text-align: center;
 }
 
-main h1:hover {
-  color: magenta;
-}
-
-main p:first-child {
-  color: red;
-}
-
-main p:last-child {
-  color: green;
+p:hover {
+  background-color: white;
 }
