@@ -28,6 +28,7 @@ main {
   background-color: yellow;
   height: 90vh;
   width: 80vw;
+  font-size: 3rem;
 }
 
 footer {
@@ -48,4 +49,10 @@ p {
 
 p:hover {
   background-color: white;
+}
+
+@media (min-width: 300px) {
+  footer {
+    /* background-color: black; */
+  }
 }
