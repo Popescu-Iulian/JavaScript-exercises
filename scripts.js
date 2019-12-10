@@ -7,3 +7,7 @@ var suma = function(a, b) {
 };
 
 suma(3, 4);
+
+for (let i = 1; i <= 100; i++) {
+  console.log(i);
+}
