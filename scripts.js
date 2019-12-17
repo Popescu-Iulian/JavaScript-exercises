@@ -134,6 +134,41 @@ function divSum(numar) {
   return sum;
 }
 
+// functie afisare nota dupa ce face media notelor
+function calculateAverage(arr) {
+  let sum = 0;
+  for (let value of arr) {
+    sum += value;
+  }
+  return sum / arr.length;
+}
+
+function showGrade(marks) {
+  const average = calculateAverage(marks);
+  if (average < 60) {
+    return "F";
+  } else if (average < 70) {
+    return "D";
+  } else if (average < 80) {
+    return "C";
+  } else if (average < 90) {
+    return "B";
+  } else {
+    return "A";
+  }
+}
+
+// functie afisare stelute pe randuri
+function showStars(number) {
+  let star = '';
+  for (let i = 1; i <= number; i++) {
+    star += '*';
+    console.log(star);
+  }
+}
+
+
+
 // 1. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit. (Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit)
 function celsiusToFah(grade) {
   return (celsius = ((grade - 32) * 5) / 9);
