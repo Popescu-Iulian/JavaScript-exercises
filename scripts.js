@@ -252,13 +252,13 @@ function sameDigit(num1, num2, num3) {
 
 // 14. Write a JS program to check if a number is multiple of 7 or the sum of the digits is multiple of 7
 function check(num) {
+  32 % 10 => scoate ultima cifra;
   return num % 7 === 0 || ;
   // (num % 10) / 10 === 0; asta asa sa fie ca sa afli ultima cifra?
 }
 
 // 15. Write a JavaScript program to capitalize the first letter of each word of a given string.
 function capatalize(string) {
-  return;
 }
 
 // 16. Write a JavaScript program to convert a given number of seconds to hours, minutes and seconds.
@@ -266,3 +266,14 @@ function capatalize(string) {
 // 17. Write a Javascript program to format a big number with comma (567234 => 567,234)
 
 // 18. Write a Javascript program to format an bank account number to be easier to read (put a space every 4 characters)
+
+
+function medieNote(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  let medieFaraTeza = sum / arr.length;
+  medieFaraTeza = Math.round(medieFaraTeza * 100) / 100;
+  
+}
