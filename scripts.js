@@ -242,7 +242,7 @@ function larger(num1, num2, num3) {
 
 // 12. Write a JavaScript program to find a value which is nearest to 100 from two different given integer values.
 function near(num1, num2) {
-  return num1 <= 100 && num2 <= 100 && num1 >= num2 ? num1 : num2;
+  return num1 <= 100 && num2 <= 100 && num1 >= num2 ? num1 : num2;  // rezolvare gresita: se face cu scadere
 }
 
 // 13. Write a JavaScript program to check if the last digit of the three given positive integers is same.
@@ -252,7 +252,7 @@ function sameDigit(num1, num2, num3) {
 
 // 14. Write a JS program to check if a number is multiple of 7 or the sum of the digits is multiple of 7
 function check(num) {
-  32 % 10 => scoate ultima cifra;
+  32 % 10 => formula asta scoate ultima cifra dintr-un numar;
   return num % 7 === 0 || ;
   // (num % 10) / 10 === 0; asta asa sa fie ca sa afli ultima cifra?
 }
@@ -277,3 +277,36 @@ function medieNote(arr) {
   medieFaraTeza = Math.round(medieFaraTeza * 100) / 100;
   
 }
+
+
+// function that returns an array containing the position of the largest value from an array given as parameter.
+function largestValue (arr) {
+  var max = arr[0];
+  for (var i=1; i < arr.length ; i++ ){
+      if (max < arr[i]) {
+          max=arr[i];
+      }
+  }
+  var pos= [ ];
+  for (var i=0; i < arr.length ; i++ ){
+      if (max === arr[i]) {
+          pos.push(i)
+      }
+  }
+  return pos;
+}
+// functions that takes 2 parameters: an array and a number "n". Return the value on the "n"-th largest value in a sorted array.
+
+// function that takes 1 parameter (an array) that returns the largest difference between 2 adjacent values in the array.
+function difference(arr){
+  let max = arr[0] - arr[1];
+  for (let i = 1; i < arr.length - 1; i++) {
+    if (max < arr[i] - arr[i+1]) {
+      max = arr[i] - arr[i+1];
+    }
+  }
+  return max;
+}
+let array = [1, 4, 7, 11, 22]; // length = 5 , i = 4
+
+// write a js program to find the maximum possible sum of some of its "k" consecutive numbers (numbers that follow each in order) of a given array of positive integers.
