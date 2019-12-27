@@ -310,3 +310,20 @@ function difference(arr){
 let array = [1, 4, 7, 11, 22]; // length = 5 , i = 4
 
 // write a js program to find the maximum possible sum of some of its "k" consecutive numbers (numbers that follow each in order) of a given array of positive integers.
+
+
+var urare = "Craciun Fericit!";
+
+var obj = {
+  urare: "La multi ani Ionilor, Ioanelor si Ionutilor",
+  key: {
+    urare: "Un An Nou plin de realizari",
+    afisareUrare: function() {
+      return this.urare;
+    }
+  }
+};
+
+var consola = obj.key.afisareUrare;
+
+console.log(consola());
