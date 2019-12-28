@@ -242,7 +242,7 @@ function larger(num1, num2, num3) {
 
 // 12. Write a JavaScript program to find a value which is nearest to 100 from two different given integer values.
 function near(num1, num2) {
-  return num1 <= 100 && num2 <= 100 && num1 >= num2 ? num1 : num2;  // rezolvare gresita: se face cu scadere
+  return (100 - num1) < (100 - num2) ? num1 : num2;
 }
 
 // 13. Write a JavaScript program to check if the last digit of the three given positive integers is same.
