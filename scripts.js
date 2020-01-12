@@ -321,3 +321,12 @@ var obj = {
 var consola = obj.key.afisareUrare;
 
 console.log(consola());
+
+// 7. Calculeaza factorialul unui numar ("factorial")
+function factorial(x) {
+  let factX = 1;
+  for (let i = 1; i <= x; i++) {
+    factX *= i;
+  }
+  return factX;
+}
