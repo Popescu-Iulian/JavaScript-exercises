@@ -330,3 +330,17 @@ function factorial(x) {
   }
   return factX;
 }
+
+// 3. O functie "getFirst5Letters" care primeste un sir de caractere si returneaza primele 5 litere (daca exista)
+function getFirst5Letter(str) {
+  let strLett = '';
+  let reg = /[\W_]/g;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] * 1 != str[i]) {
+      strLett += str[i].replace(reg, '');
+    }
+  }
+  if (strLett.length >= 5) {
+    return strLett;
+  }
+}
