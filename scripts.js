@@ -344,3 +344,17 @@ function getFirst5Letter(str) {
     return strLett;
   }
 }
+
+// 11. O functie care verifica daca un numar este palindrom (ex: 121, 1234321) ("palindrom")
+function palindrom(x) {
+  return (
+    x ===
+    Number(
+      x
+        .toString()
+        .split('')
+        .reverse()
+        .join('')
+    )
+  );
+}
