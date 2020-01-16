@@ -405,3 +405,24 @@ function countBinarySearch(arr, x, low, high) {
 function sortingArr(a, b) {
   return a - b;
 }
+
+// 1. O functie "getDigits" care primeste un sir de caractere si returneaza cifrele din sirul respectiv
+// function getDigits(str) {
+//   let strNum = '';
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] * 1 == str[i]) {
+//       strNum += str[i];
+//     }
+//   }
+//   return strNum;
+// }
+
+function getDigits(str) {
+  let strNum = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] >= '0' && str[i] <= '9') {
+      strNum += str[i];
+    }
+  }
+  return strNum;
+}
