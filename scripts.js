@@ -358,3 +358,25 @@ function palindrom(x) {
     )
   );
 }
+
+// 14. O functie care primeste 2 parametri(un array si un numar). Folosind binary search verificati daca numarul primit ca parametru se gaseste in array. ("binarySearch")
+function binarySearch(arr, x) {
+  let sortedArr = arr.sort(sortArr);
+  let low = 0;
+  let high = sortedArr.length - 1;
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    if (x == sortedArr[mid]) {
+      return true;
+    } else if (x < sortedArr[mid]) {
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+  return false;
+}
+
+function sortArr(a, b) {
+  return a - b;
+}
