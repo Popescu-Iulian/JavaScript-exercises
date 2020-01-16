@@ -380,3 +380,28 @@ function binarySearch(arr, x) {
 function sortArr(a, b) {
   return a - b;
 }
+
+// 15. O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch")
+function countBinarySearch(arr, x, low, high) {
+  let sortArr = arr.sort(sortingArr);
+  if (low === undefined) {
+    low = 0;
+  }
+  if (high === undefined) {
+    high = sortArr.length - 1;
+  }
+  if (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    if (x == sortArr[mid]) {
+      return 0;
+    } else if (x < sortArr[mid]) {
+      return 1 + countBinarySearch(arr, x, low, mid - 1);
+    } else {
+      return 1 + countBinarySearch(arr, x, mid + 1, high);
+    }
+  }
+}
+
+function sortingArr(a, b) {
+  return a - b;
+}
