@@ -451,3 +451,14 @@ function prim(x) {
     return true;
   }
 }
+
+// 8. O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
+function invers(x) {
+  return (
+    x
+      .toString()
+      .split('')
+      .reverse()
+      .join('') * 1
+  );
+}
