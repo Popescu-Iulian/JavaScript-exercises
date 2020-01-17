@@ -437,3 +437,17 @@ function divizori(x) {
   }
   return xDivs;
 }
+
+// 6. O functie "prim" care verifica daca N este numar prim (restul impartirii la 1 si la N == 0)
+function prim(x) {
+  if (x < 2) {
+    return false;
+  } else {
+    for (let i = 2; i < x; i++) {
+      if (x % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
