@@ -426,3 +426,14 @@ function getDigits(str) {
   }
   return strNum;
 }
+
+// 10. Returneaza un array care sa contina toti divizorii unui numar (ex pentru 64: trebuie sa returneze [2,4,8,16,32]) ("divizori")
+function divizori(x) {
+  let xDivs = [];
+  for (let i = 2; i <= x; i++) {
+    if (x % i === 0) {
+      xDivs.push(i);
+    }
+  }
+  return xDivs;
+}
