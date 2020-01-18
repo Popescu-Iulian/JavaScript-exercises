@@ -484,3 +484,14 @@ function hasDuplicates(arr) {
   }
   return false;
 }
+
+// 14. O functie "produsPozitive" care intoarce produsul numerelor pozitive intr-un array primit ca parametru
+function produsPozitive(arr) {
+  let mltp = 1;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= 0) {
+      mltp *= arr[i];
+    }
+  }
+  return mltp;
+}
