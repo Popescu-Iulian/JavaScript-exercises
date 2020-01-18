@@ -472,3 +472,15 @@ function contains(arr, x) {
   }
   return false;
 }
+
+// 13. O functie "hasDuplicates" care verifica daca exista duplicate intr-un array primit ca parametru
+function hasDuplicates(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
