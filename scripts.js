@@ -522,3 +522,13 @@ function sumAll(arr) {
   }
   return sum;
 }
+
+// 3. O functie "max" care primeste 2 valori si returneaza maximul dintre cele 2
+function max(x, y) {
+  return x > y ? x : y;
+}
+
+// 4. O functie "min" care primeste 2 valori si returneaza minimul dintre cele 2
+function min(x, y) {
+  return x < y ? x : y;
+}
