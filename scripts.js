@@ -495,3 +495,30 @@ function produsPozitive(arr) {
   }
   return mltp;
 }
+
+// 15. O functie "palindrom" care verifica daca un numar primit ca parametru este palindrom (inversul == originalul, ex: 1234321, 55, 787)
+function palindrom(x) {
+  return (
+    x ==
+    x
+      .toString()
+      .split('')
+      .reverse()
+      .join('')
+  );
+}
+
+// We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.
+function sumAll(arr) {
+  let sum = 0;
+  if (arr[0] <= arr[1]) {
+    for (let i = arr[0]; i <= arr[1]; i++) {
+      sum += i;
+    }
+  } else {
+    for (let i = arr[1]; i <= arr[0]; i++) {
+      sum += i;
+    }
+  }
+  return sum;
+}
