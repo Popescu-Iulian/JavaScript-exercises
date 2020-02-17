@@ -467,28 +467,13 @@ function invers(str) {
 }
 
 // functie verificare palindrom
-function invers(str) {
-  let strInversa = '';
-  for (let i = str.length - 1; i >= 0; i--) {
-    strInversa += str[i];
-    if (str === strInversa) {
-      console.log('palindrom');
+function palindrom2(str) {
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] !== str[str.length - i - 1]) {
+      return false;
     }
   }
-  return strInversa;
-}
-
-// functie verificare palindrom cu functia inversare string (de mai sus)
-function inversa(str) {
-  var strInvers = '';
-  for (var i = str.length - 1; i >= 0; i--) {
-    strInvers += str[i];
-  }
-  return strInvers;
-}
-
-function palindrom(str) {
-  return str === inversa(str);
+  return true;
 }
 
 // functie viteza si calcul puncte
@@ -573,3 +558,75 @@ function sumAll(arr) {
   }
   return sum;
 }
+
+// Write a Javascript program to format a big number with comma (567234 => 567,234)
+function format(n) {
+  var str = "";
+  for (var i = 0; n > 0; i++) {
+    var c = n % 10;
+    n = Math.floor(n / 10);
+    if (i % 3 === 0 && i !== 0) {
+      str = "," + str;
+    }
+    str = c + str;
+  }
+  return str;
+}
+
+// Write a JavaScript program to check from two given integers, if one is positive and one is negative.
+function positiveNegative(a, b) {
+  return (a >= 0 && b < 0) || (a < 0 && b >= 0);
+}
+
+// Write a JavaScript program check if a given positive number is a multiple of 3 or a multiple of 7.
+function multipleOf3Or7(val) {
+  return (val % 3 === 0) || (val % 7 === 0);
+}
+
+// Write a JavaScript program to check if two given integer values are in the range 50..99 (inclusive). Return true if either of them are in the same range.
+function between50And99(a, b) {
+  return (a >= 50 && a <= 99) || (b >= 50 && b <= 99);
+}
+
+// Write a JavaScript program to check if three given integer values are in the range 50..99 (inclusive). Return true if one or more of them are in the same range. 
+function between50And99_3Numbers(a, b, c) {
+  return (a >= 50 && a <= 99) || (b >= 50 && b <= 99) || (c >= 50 && c <= 99);
+}
+
+// Write a JavaScript program to find the largest of three given integers.
+function largestOf3(a, b, c) {
+  if (a >= b && a >= c) {
+    return a;
+  } else if (b >= a && b >= c) {
+    return b
+  } else {
+    return c;
+  }
+}
+
+// Function that takes 1 parameter: an arrray and returns the largest difference between 2 adjacent values in the array
+function maxDiff(arr) {
+  var max = arr[0] - arr[1];
+  for (var i = 1; i < arr.length - 1; i++) {
+    if (max < arr[i] - arr[i + 1]) {
+      max = arr[i] - arr[i + 1];
+    }
+  }
+  return max;
+}
+
+// Write a JavaScript program to find the maximum possible sum of some of its k consecutive numbers (numbers that follow each other in order) of a given array of positive integers.
+function maxOfSum(arr, k) {
+  var max = 0;
+  for (var i = 0; i < arr.length - k + 1; i++) {
+    var sum = 0;
+    for (var j = i; j < i + k; j++) {
+      sum += arr[j];
+    }
+    if (max < sum) {
+      max = sum;
+    }
+  }
+  return max;
+}
+
