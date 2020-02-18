@@ -144,16 +144,6 @@ function palindrom(x) {
 }
 
 // 16. O functie "getDigits" care primeste un sir de caractere si returneaza cifrele din sirul respectiv
-// function getDigits(str) {
-//   let strNum = '';
-//   for (let i = 0; i < str.length; i++) {
-//     if (str[i] * 1 == str[i]) {
-//       strNum += str[i];
-//     }
-//   }
-//   return strNum;
-// }
-
 function getDigits(str) {
   let strNum = '';
   for (let i = 0; i < str.length; i++) {
@@ -165,28 +155,7 @@ function getDigits(str) {
 }
 
 // 17. O functie "getLetters" care primeste un sir de caractere si returneaza doar literele din sirul respectiv
-// function getLetters(str) {
-//   let strLett = '';
-//   let reg = /[\W_]/g;
-//   for (let i = 0; i < str.length; i++) {
-//     if (str[i] * 1 != str[i]) {
-//       strLett += str[i].replace(reg, '');
-//     }
-//   }
-//   return strLett;
-// }
-
 function getLetters(str) {
-  let strLett = '';
-  for (let i = 0; i < str.length; i++) {
-    if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
-      strLett += str[i].toLowerCase();
-    }
-  }
-  return strLett;
-}
-
-function a(str) {
   let strLett = '';
   for (let i = 0; i < str.length; i++) {
     if (str[i].toLowerCase() >= 'a' && str[i].toLowerCase() <= 'z') {
@@ -205,9 +174,7 @@ function getFirst5Letter(str) {
       strLett += str[i].replace(reg, '');
     }
   }
-  if (strLett.length >= 5) {
-    return strLett;
-  }
+  return strLett;
 }
 
 // 19. O functie "concatenate" care primeste o lista de siruri de caractere si returneaza sirurile concatenate
@@ -220,14 +187,6 @@ function concatenate(arr) {
 }
 
 // 20. O functie "getAllDigits" care primeste o lista de siruri de caractere si returneaza cifrele din toate sirurile
-// function getAllDigits(arr) {
-//   let reg = /[\W_a-z]/g;
-//   for (let i = 0; i < arr.length; i++) {
-//     arr[i] = arr[i].replace(reg, '');
-//   }
-//   return arr;
-// }
-
 function getAllDigits(arr) {
   let arrDigits = [];
   for (let i = 0; i < arr.length; i++) {
@@ -243,16 +202,6 @@ function getAllDigits(arr) {
 getAllDigits(['1a2b', '3c4d']);
 
 // 21. O functie "invertAllStrings" care primeste o lista de siruri de caractere si returneaza lista de siruri de caractere inversate
-// function invertAllStrings(arr) {
-//   for (let i = 0; i < arr.length; i++) {
-//     arr[i] = arr[i]
-//       .split('')
-//       .reverse()
-//       .join('');
-//   }
-//   return arr;
-// }
-
 function invertAllStrings(arr) {
   let reversed = [];
   for (let i = 0; i < arr.length; i++) {
@@ -262,8 +211,6 @@ function invertAllStrings(arr) {
   }
   return reversed;
 }
-
-invertAllStrings(['123', 'abc']);
 
 // 22. Calculeaza factorialul unui numar ("factorial")
 function factorial(x) {
@@ -276,18 +223,19 @@ function factorial(x) {
 
 // 23. Calculeaza cel mai mare divizor comun al 2 numere ("cmmdc")
 function cmmdc(x, y) {
-  console.log('la asta trebuie sa stii putina matematica, iar eu nu stiu');
-  console.log(
-    'dar ma gandeam sa stocam divizorii fiecaruia in 2 array-uri, iar apoi sa comparam cifrele, returnandu-l pe cel mai mare care se regaseste in ambele'
-  );
+  while (x !== y) {
+    if (x > y) {
+      x -= y;
+    } else {
+      y -= x;
+    }
+  }
+  return y;
 }
 
 // 24. Calculeaza cel mai mic multiplu comun al 2 numere ("cmmmc")
 function cmmmc(x, y) {
-  console.log('si la asta trebuie sa stii putina matematica');
-  console.log(
-    'din ce am citit pe Wiki despre cmmmc, nici nu am idee de cum as putea sa o fac ocolind partea matematica, ca in exercitiul #8 de mai sus'
-  );
+  return (x * y) / cmmdc(x, y);
 }
 
 // 25. Returneaza un array care sa contina toti divizorii unui numar (ex pentru 64: trebuie sa returneze [2,4,8,16,32]) ("divizori")
@@ -331,18 +279,6 @@ function sortArr(a, b) {
 }
 
 // 28. O functie care primeste ca parametru un array de numere. Aceasta sorteaza ascendent numerele pare si descendent numerele impare, in cadrul aceluiasi array primit ca parameru. ("sortAscDesc")
-// function sortAscDesc(arr) {
-//   let sorted = [];
-//   for (let i = arr.length - 1; i >= 0; i--) {
-//     if (arr[i] % 2 === 0) {
-//       sorted.unshift(arr[i]);
-//     } else {
-//       sorted.push(arr[i]);
-//     }
-//   }
-//   return sorted;
-// }
-
 function sortAscDesc(arr) {
   let evens = [];
   let odds = [];
@@ -353,7 +289,7 @@ function sortAscDesc(arr) {
       odds.push(arr[i]);
     }
   }
-  return [evens.sort(sortUpArr), odds.sort(sortDownArr)];
+  return evens.sort(sortUpArr).concat(odds.sort(sortDownArr));
 }
 
 function sortUpArr(a, b) {
@@ -363,8 +299,6 @@ function sortUpArr(a, b) {
 function sortDownArr(a, b) {
   return b - a;
 }
-
-sortAscDesc([5, 4, 1, 8, 3, 2, 9, 10, 4, 7]);
 
 // 29. O functie care primeste 2 parametri(un array si un numar). Folosind binary search verificati daca numarul primit ca parametru se gaseste in array. ("binarySearch")
 function binarySearch(arr, x) {
