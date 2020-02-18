@@ -31,16 +31,14 @@ function suma(x) {
 
 // 6. O functie "prim" care verifica daca N este numar prim (restul impartirii la 1 si la N == 0)
 function prim(x) {
-  if (x < 2) {
-    return false;
-  } else {
-    for (let i = 2; i < x; i++) {
-      if (x % i === 0) {
-        return false;
-      }
+  if (x < 2) return false;
+
+  for (let i = 2; i < x; i++) {
+    if (x % i === 0) {
+      return false;
     }
-    return true;
   }
+  return true;
 }
 
 // 7. O functie "sumaPrime" care intoarce suma primelor N numere prime (pentru N = 5 trebuie suma 2 + 3 + 5 + 7 + 11)
@@ -48,7 +46,7 @@ function sumPrime(x) {
   let primeArr = [];
   let sum = 0;
   for (let i = 2; primeArr.length < x; i++) {
-    if (isPrime(i)) {
+    if (prim(i)) {
       primeArr.push(i);
     }
   }
@@ -58,39 +56,25 @@ function sumPrime(x) {
   return sum;
 }
 
-function isPrime(x) {
-  if (x < 2) {
-    return false;
-  } else {
-    for (let i = 2; i < x; i++) {
-      if (x % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  }
-}
-
 // 8. O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
 function invers(x) {
-  return (
-    x
-      .toString()
-      .split('')
-      .reverse()
-      .join('') * 1
-  );
+  let digit = 0;
+  let reversed = 0;
+
+  while (x > 0) {
+    digit = x % 10;
+    reversed = (reversed * 10) + digit;
+    x = parseInt(x / 10);
+  }
+
+  return reversed;
 }
 
 // 9. O functie "produsImpare" care intoarce produsul primelor N numere impare pozitive
 function produsImpare(x) {
   let mltp = 1;
-  let counter = 0;
-  for (let i = 0; counter <= x * 2; i++) {
-    if (i % 2 !== 0) {
-      mltp *= i;
-    }
-    counter++;
+  for (let i = 1; i <= x * 2; i += 2) {
+    mltp *= i;
   }
   return mltp;
 }
@@ -156,14 +140,7 @@ function produsPozitive(arr) {
 
 // 15. O functie "palindrom" care verifica daca un numar primit ca parametru este palindrom (inversul == originalul, ex: 1234321, 55, 787)
 function palindrom(x) {
-  return (
-    x ==
-    x
-      .toString()
-      .split('')
-      .reverse()
-      .join('')
-  );
+  return x === invers(x);
 }
 
 // 16. O functie "getDigits" care primeste un sir de caractere si returneaza cifrele din sirul respectiv
