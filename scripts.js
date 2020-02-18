@@ -199,8 +199,6 @@ function getAllDigits(arr) {
   return arrDigits;
 }
 
-getAllDigits(['1a2b', '3c4d']);
-
 // 21. O functie "invertAllStrings" care primeste o lista de siruri de caractere si returneaza lista de siruri de caractere inversate
 function invertAllStrings(arr) {
   let reversed = [];
