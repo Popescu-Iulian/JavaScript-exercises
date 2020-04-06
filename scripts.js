@@ -345,6 +345,18 @@ function sortingArr(a, b) {
   return a - b;
 }
 
+// 31. O functie care sa returneze array cu 10 numere random intre 0 si 100
+function randomTenNums() {
+  const max = 100;
+  const arr = [];
+
+  for (let i = 0; i < 10; i++) {
+    arr.push(Math.floor(Math.random() * Math.floor(max)));
+  }
+
+  return arr;
+}
+
 
 
 //////////////////////////////////////////////////////////////////////////
